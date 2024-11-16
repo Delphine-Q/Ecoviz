@@ -1,33 +1,51 @@
-body{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+/* @import url('https://fonts.googleapis.com/css?family=Fredoka+One'); */
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
 }
 
-.title {
-    position: relative;
-    text-align: center;
-    font-size: 48pt;
+.snap {
+  scroll-snap-type: y mandatory; /* Changez x en y pour le défilement vertical */
+  display: flex;
+  flex-direction: column; /* Alignez les éléments verticalement */
+  height: 100vh; /* Assurez-vous que la hauteur est 100vh pour le défilement */
+  overflow-y: scroll; /* Permet le défilement vertical */
 }
 
-.eco .first{
+.slide {
+  min-height: 50vh; /* Utilisez min-height pour chaque diapositive */
+  scroll-snap-align: start;
+  position: relative;
+  text-align: center;
+  padding-top: 50vh; /* Ajustez le padding si nécessaire */
+}
+
+.slide1 {
+  background: white;
+}
+
+    .first{
     color:#D5E9ED;
-}
+    }
 
-.eco .second{
+    .second{
     color:#1797BA; 
-}
+        }
 
-.eco .third{
+    .third{
     color: #125379
-}
+    }
 
-.carte{
-    background-color: #D5E9ED;
+.slide2 {
+  background: #D5E9ED;
 }
-
-.bio{
-    background-color: #1797BA;
+.slide3 {
+  background: #1797BA;
 }
-
-.mention{
-    background-color: #;
+.slide4 {
+  background: #125379;
 }
