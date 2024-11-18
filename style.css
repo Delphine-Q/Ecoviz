@@ -9,43 +9,100 @@ body {
 }
 
 .snap {
-  scroll-snap-type: y mandatory; /* Changez x en y pour le défilement vertical */
+  scroll-snap-type: y mandatory;
   display: flex;
-  flex-direction: column; /* Alignez les éléments verticalement */
-  height: 100vh; /* Assurez-vous que la hauteur est 100vh pour le défilement */
-  overflow-y: scroll; /* Permet le défilement vertical */
+  flex-direction: column; 
+  height: 100vh; 
+  overflow-y: scroll;
 }
 
 .slide {
-  min-height: 50vh; /* Utilisez min-height pour chaque diapositive */
+  min-height: 100vh; 
   scroll-snap-align: start;
   position: relative;
-  text-align: center;
-  padding-top: 50vh; /* Ajustez le padding si nécessaire */
+  
 }
 
 .slide1 {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
   background: white;
+  text-align: center;
 }
 
-    .first{
-    color:#D5E9ED;
-    }
+h1 {
+  width: 100%; 
+  text-align: center; 
+  margin: 0; 
+  font-size: 98pt; 
+  color: #125379;
+  letter-spacing: 20px;
+  text-shadow: 
+      0px -8px 0px #1797BA, 
+      0px -16px 0px #D5E9ED; 
+}
 
-    .second{
-    color:#1797BA; 
-        }
+.slide1 span {
+  position: relative; 
+  display: inline-block; 
+  width: 1em; 
+  height: 1em;
+  color: transparent;
+}
 
-    .third{
-    color: #125379
-    }
+.slide1 span::before {
+  content: ''; 
+  position: absolute; 
+  top: 10px;
+  right: 13px; 
+  width: 120px; 
+  height: 120px;
+  background-image: url('image/planete.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+
 
 .slide2 {
   background: #D5E9ED;
 }
+
+
+
 .slide3 {
   background: #1797BA;
 }
+
+.slide3 .bio h2{
+  text-align: center;
+  font-size: 28pt;
+  margin-top: 30px;
+}
+
+.slide3 .mer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "icon h4"
+  "icon p";
+}
+
+.slide3 .mer .icon h3{
+  font-size:98pt; 
+  text-shadow: 5px 3px 3px black;;
+}
+
+.mer .icon{
+  display: flex;
+  align-items: center;
+}
+
+
+
 .slide4 {
   background: #125379;
 }
