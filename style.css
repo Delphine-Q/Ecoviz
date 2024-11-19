@@ -64,7 +64,7 @@ h1 {
 }
 
 
-
+/* _______________________________________ */
 
 
 .slide2 {
@@ -72,6 +72,7 @@ h1 {
 }
 
 
+/* __________________________________ */
 
 .slide3 {
   background: #1797BA;
@@ -79,7 +80,7 @@ h1 {
 
 .slide3 .bio h2{
   text-align: center;
-  font-size: 28pt;
+  font-size: 40pt;
   margin-top: 30px;
 }
 
@@ -87,13 +88,20 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-  "icon h4"
-  "icon p";
+  "icon text";
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.slide3 .mer .icon img{
+  margin-right:30px;
 }
 
 .slide3 .mer .icon h3{
   font-size:98pt; 
-  text-shadow: 5px 3px 3px black;;
+  text-shadow: 5px 3px 3px black;
+  margin:0;
 }
 
 .mer .icon{
@@ -101,7 +109,34 @@ h1 {
   align-items: center;
 }
 
+/* --------------------------- */
 
+.slide3 .animal{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "icon2 text2";
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slide3 .animal .icon2 h3{
+  font-size:98pt; 
+  text-shadow: 5px 3px 3px black;
+  margin:0;
+}
+
+.animal .icon2{
+  display: flex;
+  align-items: center;
+  margin-left:60px; 
+}
+
+.icon2 img{
+  margin-top:5px;
+}
+
+/* _______________________________________ */
 
 .slide4 {
   background: #125379;
