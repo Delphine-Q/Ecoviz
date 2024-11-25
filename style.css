@@ -69,6 +69,7 @@ h1 {
 
 .slide2 {
   background: #D5E9ED;
+  background-attachment: fixed;
 }
 
 
@@ -76,6 +77,8 @@ h1 {
 
 .slide3 {
   background: #1797BA;
+  background-attachment: fixed;
+
 }
 
 .slide3 .bio h2{
@@ -140,4 +143,5 @@ h1 {
 
 .slide4 {
   background: #125379;
+  background-attachment: fixed;
 }
