@@ -2,7 +2,7 @@
 /* @import url('https://fonts.googleapis.com/css?family=Fredoka+One'); */
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   margin: 0;
   overflow: hidden;
   color: #fff;
@@ -32,7 +32,7 @@ body {
   text-align: center;
 }
 
-h1 {
+.first{
   width: 100%; 
   text-align: center; 
   margin: 0; 
@@ -143,36 +143,91 @@ h1 {
 
 /* _______________________________________ */
 
+:root {
+  --red: #EF233C;
+  --blue: #2B2D42;
+  --orange: #FF9F1C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .slide4 {
-  background: #125379;
-  background-attachment: fixed;
-  display: grid;
-  grid-template-rows: auto 1fr; /* Layout en grille pour une meilleure organisation */
+  font-family: 'Nunito', sans-serif;
+  height: 300px;
+  margin: 0;
+  background-color: #125379;
+}
+
+
+.btn {
+  padding: 10px 10px;
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  transition: background 0.35s ease-in-out;
+  font-weight: 700;
+}
+
+.btn:hover {
+  background: #d62839; 
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 40px;
-  overflow-y: auto; /* Permettre un scroll interne si nécessaire */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
-.slide4 .editor, 
-.slide4 .heber, 
-.slide4 .habill, 
-.slide4 .marque, 
-.slide4 .dele, 
-.slide4 .conf, 
-.slide4 .prop {
-  margin-bottom: 20px;
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Media Queries pour la slide des mentions légales */
-@media (max-width: 768px) {
-  .slide4 {
-    grid-template-rows: repeat(7, auto); /* Adapter la disposition pour mobile */
-  }
+.modal {
+  background: white;
+  padding: 40px 80px;
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
+  color: black;
+}
 
-  .slide4 h3 {
-    font-size: 1.5rem; /* Réduire la taille des titres */
-  }
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  .slide4 p {
-    font-size: 1rem; /* Adapter la taille du texte pour la lisibilité */
-  }
+.content {
+  transform: translate(0, -10px);
+  opacity: 0;
+  transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+.modal .content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1000 !important;
+}
+
+
+.title {
+  margin-top: 0;
 }
