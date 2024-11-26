@@ -6,6 +6,7 @@ body {
   margin: 0;
   overflow: hidden;
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .snap {
@@ -114,6 +115,7 @@ h1 {
 
 /* --------------------------- */
 
+
 .slide3 .animal{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -144,4 +146,33 @@ h1 {
 .slide4 {
   background: #125379;
   background-attachment: fixed;
+  display: grid;
+  grid-template-rows: auto 1fr; /* Layout en grille pour une meilleure organisation */
+  padding: 40px;
+  overflow-y: auto; /* Permettre un scroll interne si nécessaire */
+}
+
+.slide4 .editor, 
+.slide4 .heber, 
+.slide4 .habill, 
+.slide4 .marque, 
+.slide4 .dele, 
+.slide4 .conf, 
+.slide4 .prop {
+  margin-bottom: 20px;
+}
+
+/* Media Queries pour la slide des mentions légales */
+@media (max-width: 768px) {
+  .slide4 {
+    grid-template-rows: repeat(7, auto); /* Adapter la disposition pour mobile */
+  }
+
+  .slide4 h3 {
+    font-size: 1.5rem; /* Réduire la taille des titres */
+  }
+
+  .slide4 p {
+    font-size: 1rem; /* Adapter la taille du texte pour la lisibilité */
+  }
 }
