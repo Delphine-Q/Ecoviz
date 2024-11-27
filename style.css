@@ -1,8 +1,6 @@
 
-/* @import url('https://fonts.googleapis.com/css?family=Fredoka+One'); */
-
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   overflow: hidden;
   color: #fff;
@@ -154,7 +152,7 @@ body {
 }
 
 .slide4 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 300px;
   margin: 0;
   background-color: #125379;
