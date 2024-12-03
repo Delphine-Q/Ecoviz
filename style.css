@@ -75,69 +75,120 @@ body {
 /* __________________________________ */
 
 .slide3 {
-  background: #1797BA;
+  background: #82B7DF;
   background-attachment: fixed;
-
-}
-
-.slide3 .bio h2{
-  text-align: center;
-  font-size: 40pt;
-  margin-top: 30px;
-}
-
-.slide3 .mer{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-  "icon text";
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-
-.slide3 .mer .icon img{
-  margin-right:30px;
-}
-
-.slide3 .mer .icon h3{
-  font-size:98pt; 
-  text-shadow: 5px 3px 3px black;
-  margin:0;
-}
-
-.mer .icon{
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  padding:80px;
 }
+
+.titre h3{
+  font-size: 120pt;
+  color: #0B2760;
+  text-shadow: 7px 5px 1px #6189A7;
+  margin: 0;
+}
+
+.titre img{
+  width: 100px;
+  height: 150px;
+  margin-bottom: 7px;
+}
+
+.titre {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap : 40px;
+}
+
+.info h4{
+  font-family: "Staatliches", sans-serif;
+  font-size: 60px;
+  margin: 0;
+}
+
+.info p{
+  color: #00466E;
+  font-size: 32px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.text{
+  gap : 20px;
+}
+
+.dessin{
+  float: right;
+  width: 60%;
+}
+
+
 
 /* --------------------------- */
 
-
-.slide3 .animal{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-  "icon2 text2";
-  width: 90%;
-  margin: 0 auto;
-}
-
-.slide3 .animal .icon2 h3{
-  font-size:98pt; 
-  text-shadow: 5px 3px 3px black;
-  margin:0;
-}
-
-.animal .icon2{
+.slide4 {
+  background: #4A90C7;
+  background-attachment: fixed;
+  text-align: end;
   display: flex;
   align-items: center;
-  margin-left:60px; 
+  box-sizing: border-box;
+  padding:20px;
 }
 
-.icon2 img{
-  margin-top:5px;
+.titre1 h3{
+  font-size: 120pt;
+  color: #0B2760;
+  text-shadow: 7px 5px 1px #172E3F;
+  margin: 0;
 }
+
+.titre1 img{
+  width: 150px;
+}
+
+.titre1 {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap : 10px;
+}
+
+.info1 p{
+  color: #0B2760;
+  font-size: 32px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.info1{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 50px;
+}
+
+.info1 h4{
+  font-family: "Staatliches", sans-serif;
+  font-size: 60px;
+  margin: 0;
+}
+
+.dessin1{
+  margin-left: 30px;
+  order:-1;
+  width: 40%;
+}
+
 
 /* _______________________________________ */
 
@@ -151,11 +202,11 @@ body {
   box-sizing: border-box;
 }
 
-.slide4 {
+.slide5 {
   font-family: 'Roboto', sans-serif;
   height: 300px;
   margin: 0;
-  background-color: #125379;
+  background-color: #304674;
   flex-direction: column;
 }
 
