@@ -24,10 +24,24 @@ body {
 
 .slide1 {
   display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.slide1 .page1{
+  margin-top:40px;
+  display: flex; 
   justify-content: center;
   align-items: center;
   background: white;
   text-align: center;
+}
+
+.slide1 img{
+  margin-top: 20px;
+  width: 40%;
 }
 
 .first{
@@ -45,21 +59,24 @@ body {
 .slide1 span {
   position: relative; 
   display: inline-block; 
-  width: 1em; 
-  height: 1em;
-  color: transparent;
+  width: 0.94em;
+  height: 0.94em;
+  margin-right: 7px;
+  color: transparent; 
+  line-height: 1;
 }
 
 .slide1 span::before {
   content: ''; 
   position: absolute; 
-  top: 10px;
-  right: 13px; 
-  width: 120px; 
-  height: 120px;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('image/planete.png');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -421,4 +438,63 @@ ul {
 
 .btn:hover {
   background-color: rgb(48, 44, 44);
+}
+
+/* --------------------------------------------------------------------- */
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .slide1 img {
+    width: 80%; /* Ajuster la taille de l'image pour les petits écrans */
+  }
+
+  .first {
+    font-size: 48pt; /* Réduire la taille de la police */
+    letter-spacing: 10px; /* Réduire l'espacement des lettres */
+  }
+
+  .titre h3 {
+    font-size: 60pt; /* Réduire la taille de la police */
+  }
+
+  .info h4 {
+    font-size: 40px; /* Réduire la taille de la police */
+  }
+
+  .info p {
+    font-size: 24px; /* Réduire la taille de la police */
+  }
+
+  .dessin, .dessin1 {
+    width: 100%; /* Ajuster la largeur pour les petits écrans */
+    float: none; /* Supprimer le flottement */
+  }
+
+  .btn {
+    width: 100%; /* Rendre le bouton plein écran */
+    padding: 15px; /* Augmenter le padding pour un meilleur clic */
+  }
+}
+
+/* Styles pour les écrans très petits (mobiles) */
+@media (max-width: 480px) {
+  .first {
+    font-size: 36pt; /* Réduire encore la taille de la police */
+  }
+
+  .titre h3 {
+    font-size: 40pt; /* Réduire encore la taille de la police */
+  }
+
+  .info h4 {
+    font-size: 30px; /* Réduire encore la taille de la police */
+  }
+
+  .info p {
+    font-size: 20px; /* Réduire encore la taille de la police */
+  }
+
+  .slide1 {
+    padding: 30px; /* Réduire le padding */
+  }
 }
