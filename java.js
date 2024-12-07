@@ -8,14 +8,16 @@ $(document).ready(function() {
     $(".open-modal").on('click', function(e) {
         e.preventDefault(); // Empêche le comportement par défaut du lien
 
-        var $this = $(this),
-            modal = $this.data("modal");
+        var modalId = $(this).data("modal"); // Récupère l'ID de la modal
+        if ($(modalId).length) { // Vérifie si l'élément existe
+            $(modalId).parents(".overlay").addClass("open"); // Ouvre l'overlay
 
-        $(modal).parents(".overlay").addClass("open"); // Ouvre l'overlay
-
-        setTimeout(function() {
-            $(modal).addClass("open"); // Ouvre la modal après un délai
-        }, 350);
+            setTimeout(function() {
+                $(modalId).addClass("open"); // Ouvre la modal après un délai
+            }, 350);
+        } else {
+            console.error("Modal not found: " + modalId); // Affiche une erreur si la modal n'existe pas
+        }
     });
 
     // Ferme la modal lorsqu'on clique en dehors de celle-ci
@@ -36,12 +38,15 @@ $(document).ready(function() {
     $(".close-modal").on('click', function(e) {
         e.preventDefault();
 
-        var $this = $(this),
-            modal = $this.data("modal");
-
-        $(modal).removeClass("open");
+        var modalId = $(this).data("modal");
+        $(modalId).removeClass("open");
         setTimeout(function() {
-            $(modal).parents(".overlay").removeClass("open");
+            $(modalId).parents(".overlay").removeClass("open");
         }, 350);
+    });
+
+    // Gestion du bouton flottant
+    $('.main-btn').on('click', function() {
+        $('.float-btn ul').toggleClass('toggled');
     });
 });
