@@ -148,7 +148,9 @@ body {
   width: 60%;
 }
 
-
+abbr{
+  text-decoration: none;
+}
 
 /* --------------------------- */
 
