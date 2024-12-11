@@ -83,13 +83,18 @@ body {
 
 
 .slide2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background: #D5E9ED;
   background-attachment: fixed;
+  color: black;
 }
 
 #graphic {
   width: 950px;
-  height: 670px;
+  height: 690px;
   border: solid 1px;
   position: relative;
   padding: 16px;
@@ -98,10 +103,15 @@ body {
   align-items: center;
 }
 
+#graph-title {
+  color: black;
+  text-align: center;
+
+}
 #tabs {
   width: 100%;
   position: absolute;
-  top: -45px;
+  top: -43px;
   left: -1px;
 }
 
@@ -154,12 +164,6 @@ body {
   margin-right: 8px;
 }
 
-
-
-#graph-title {
-  text-align: center;
-}
-
 #display-table {
   height: 480px;
   overflow-y: auto;
@@ -172,7 +176,7 @@ body {
 }
 
 td,th {
-  border: solid 1px;
+  border: solid 1px black;
   padding: 8px 16px;
 }
 
