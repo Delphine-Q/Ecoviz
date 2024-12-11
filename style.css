@@ -363,6 +363,15 @@ abbr{
   width: 40%;
 }
 
+.droit{
+    font-size: 10pt;
+    position: absolute; 
+    bottom: 5px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: #0B2760;
+}
+
 
 /* _______________________________________ */
 
