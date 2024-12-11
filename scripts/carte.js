@@ -1,14 +1,14 @@
 //svg
 const svg = d3.select("#map")
   .append("svg")
-  .attr("width", 700)
+  .attr("width", 750)
   .attr("height", 450);
 
 //projection et path
 let projection = d3.geoMercator()
 .scale(110)
 .center([5, 10])
-.translate([360, 300]);
+.translate([375, 300]);
 let path = d3.geoPath().projection(projection);
 
 
@@ -141,7 +141,7 @@ Promise.all([
             break;
           case "temperature":
             d3.select("#option-map").dispatch('click');
-            drawGraphic("Évolution de la contribution au rechauffement climatique",temperatureData,"share_of_temperature_response_ghg_total",tempScale,[0.01,0.1,0.5,1,5,10,20],".1r", "Contribution au rechauffement climatique")
+            drawGraphic("Évolution de la contribution au rechauffement climatique",temperatureData,"share_of_temperature_response_ghg_total",tempScale,[0.01,0.1,0.5,1,5,10,20],".1r", "Contribution au rechauffement climatique (en %)"," %")
             break;
         }
 
@@ -193,8 +193,8 @@ Promise.all([
     function mousemove(d) {
       tooltip
         .html("<p style='margin:0'>" + d.explicitOriginalTarget.__data__.properties.name + "<br>" + d3.select(this).attr("value") + "</p>")
-        .style("left", (event.pageX - 40) + "px")
-        .style("top", (event.pageY - 130) + "px")
+        .style("left", (event.pageX - 300) + "px")
+        .style("top", (event.pageY - 50) + "px")
     }
     function mouseleave(d) {
       tooltip
@@ -204,7 +204,7 @@ Promise.all([
     }
 
   //Dessiner les graphiques/tableaux
-  function drawGraphic(title,dataTable,dataValue,scale,cells,format,dataName) {
+  function drawGraphic(title,dataTable,dataValue,scale,cells,format,dataName,unit = "") {
       sortByYear(dataTable,dataValue)
 
       //changer le titre du graphique
@@ -232,7 +232,7 @@ Promise.all([
             .orient("vertical")
             .scale(colorScale) 
             .title("Légende")
-            .labels(["≤ "+d3.format(format)(cells[0]),d3.format(format)(cells[1]), d3.format(format)(cells[2]), d3.format(format)(cells[3]), d3.format(format)(cells[4]), d3.format(format)(cells[5]), "≥ "+ d3.format(format)(cells[6])])
+            .labels(["≤ "+d3.format(format)(cells[0]) + unit,d3.format(format)(cells[1]) + unit, d3.format(format)(cells[2]) + unit, d3.format(format)(cells[3]) + unit, d3.format(format)(cells[4]) + unit, d3.format(format)(cells[5]) + unit, "≥ "+ d3.format(format)(cells[6]) + unit])
 
           color.select(".legendSequential")
             .call(legendSequential);
