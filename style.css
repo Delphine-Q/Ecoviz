@@ -7,22 +7,6 @@ body {
   font-size: 1.2rem;
 }
 
-h2 {
-  font-family: "Staatliches", sans-serif;
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 10rem;
-  font-family: "Staatliches", sans-serif;
-
-}
-
-h4 {
-  font-size: 4rem;
-}
-
-
 .snap {
   scroll-snap-type: y mandatory;
   display: flex;
@@ -126,6 +110,7 @@ h4 {
   color: #0B2760;
   text-align: center;
   margin-top: 72px;
+  font-size: 2.5rem;
   font-family: "Staatliches", sans-serif;
 }
 
@@ -324,8 +309,6 @@ th {
 }
 
 .titre img{
-  width: 100px;
-  height: 150px;
   margin-bottom: 7px;
 }
 
@@ -381,14 +364,13 @@ abbr{
 }
 
 .titre1 h3{
+  font-size: 10rem;
   color: #0B2760;
   text-shadow: 7px 5px 1px #4b6984;
   margin: 0;
 }
 
 .titre1 img{
-  width: 100px;
-  height: 140px;
   margin : 30px;
 }
 
@@ -414,6 +396,7 @@ abbr{
 }
 
 .info1 h4{
+  font-size: 4rem;
   font-family: "Staatliches", sans-serif;
   margin: 0;
 }
