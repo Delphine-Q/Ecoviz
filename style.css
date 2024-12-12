@@ -571,13 +571,13 @@ ul {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease-in-out;
-}
-
-.modal.open {
-  opacity: 1;
-  pointer-events: auto;
   width: 70%;
   padding: 30px;
+}
+
+.modal.open{
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal .content {
