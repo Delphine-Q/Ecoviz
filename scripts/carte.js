@@ -137,7 +137,7 @@ Promise.all([
         switch (tablink.id) {
           case "co2":
             d3.select("#option-map").dispatch('click');
-            drawGraphic("Évolution des émissions CO2",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions CO2 (en tonnes)")
+            drawGraphic("Évolution des émissions annuelles de CO2 (en tonnes)",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions annuelles CO2 (en tonnes)")
             break;
           case "temperature":
             d3.select("#option-map").dispatch('click');
@@ -157,18 +157,7 @@ Promise.all([
     const tempScale = d3.scaleLog()
     .domain([0.01,0.1,1,20])
     .range(["#7BC13D","#DBDCA0","#EFAE3A","#C53026"]);
-  
 
-  //trier les donnees par annee
-  let dataByYear = {};
-
-  function sortByYear(dataTable,dataValue) {
-    dataTable.forEach(row => {
-      const year = row.Year;
-      if (!dataByYear[year]) dataByYear[year] = {};
-      dataByYear[year][row.Code] = [row.Entity,row[dataValue]];
-    });
-  }
 
   //infobulle qui s'affiche en hover
   let tooltip = d3.select("#map")
@@ -185,7 +174,14 @@ Promise.all([
 
   //Dessiner les graphiques/tableaux
   function drawGraphic(title,dataTable,dataValue,scale,cells,format,dataName,unit = "") {
-      sortByYear(dataTable,dataValue)
+        //trier les donnees par annee
+        let dataByYear = {};
+
+        dataTable.forEach(row => {
+          const year = row.Year;
+          if (!dataByYear[year]) dataByYear[year] = {};
+          dataByYear[year][row.Code] = [row.Entity,row[dataValue]];
+        });
 
       //changer le titre du graphique
       const graphTitle = document.querySelector("#graph-title");
@@ -195,9 +191,6 @@ Promise.all([
       const colorScale = scale
 
       //legendes
-      createLegends()
-
-      function createLegends() {
         const color = d3.select("#color");
         color.html("");
         color.append("g")
@@ -236,7 +229,7 @@ Promise.all([
           color.select(".legendUndefined")
             .call(legendUndefined);
 
-        }
+
         
       //mettre a jour la carte
       function updateMap(year) {
@@ -245,15 +238,15 @@ Promise.all([
           countries
           .attr("fill", d => {
               const iso = d.id;
-              if (data && data[iso]) {
-                if (data[iso][1]>cells[0]) {
-                  return colorScale(data[iso][1]);
-                } else return "#7BC13D";
+              if (typeof data[iso] !== 'undefined') {
+                if (data[iso][1]<cells[0]) {
+                  return "#7BC13D";
+                } else return colorScale(data[iso][1]);
               } else return "#ccc";
           })
           .attr("value", d => {
             const iso = d.id;
-            return data && data[iso] ? data[iso][1] : "Inconnu";
+            return (typeof data[iso] !== 'undefined') ? data[iso][1] : "Inconnu";
         })
         //afficher infobulle en survol des pays
           .on("mouseover", mouseover)
@@ -270,7 +263,6 @@ Promise.all([
           }
       
           function mousemove(d) {
-            console.log(d)
             tooltip
               .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + "</p>")
               .style("left", (event.clientX - 300) + "px")
@@ -312,9 +304,11 @@ Promise.all([
       });
 
       d3.select("#yearSlider").dispatch('input');
+      console.log(dataByYear["CHN"][1])
 
   }
     //initialize avec le graphique CO2
     d3.select("#co2").dispatch('click');
+
 
 })

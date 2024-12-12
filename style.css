@@ -80,8 +80,6 @@ body {
 
 
 /* _______________________________________ */
-
-
 .slide2 {
   display: flex;
   flex-direction: column;
@@ -103,6 +101,10 @@ body {
   align-items: center;
 }
 
+#graphic button {
+  font-size: 1rem;
+}
+
 #graph-title {
   color: black;
   text-align: center;
@@ -110,18 +112,19 @@ body {
 
 }
 
+/* CO2 ou Temperature boutons */
 #tabs {
   width: 100%;
   position: absolute;
-  top: -43px;
+  top: -47px;
   left: -1px;
 }
 
 .tablink {
   width: 120px;
-  background-color: black;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border: solid 1px black;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
@@ -135,30 +138,18 @@ cursor: pointer;
 }
 
 .tablink.active {
-  background-color: #D5E9ED;
-  color: black;
-  border: solid 1px;
-  border-bottom: none;
+  background-color: black;
+  color: white;
 }
 
 .tablink.active:hover {
   cursor: default;
 }
 
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
+/* Continent boutons */
 #continents {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-#display-options span {
-  display: flex;
   align-items: center;
 }
 
@@ -186,6 +177,13 @@ cursor: pointer;
   cursor: default;
 }
 
+/* Type de graphique boutons */
+#display-options span {
+  display: flex;
+  align-items: center;
+}
+
+
 #display-options {
   text-align: right;
   position: absolute;
@@ -198,6 +196,7 @@ cursor: pointer;
   margin-right: 8px;
 }
 
+/* details */
 #sources-graphic {
   color: black;
   font-size: 0.8rem;
@@ -207,9 +206,22 @@ cursor: pointer;
   border-radius: 6px;
 }
 
-#sources-graphic * {
+#sources-graphic summary {
+  margin-bottom: 8px;
+}
+
+#sources-graphic a {
   color: black;
-  margin: 4px 0;
+}
+
+/* Graphique */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+#legend .label {
+  font-size: 1rem;
 }
 
 #display-table {
@@ -229,6 +241,7 @@ td,th {
 }
 
 th {
+  width: 320px;
   background-color: #EFAE3A;
 }
 
@@ -635,7 +648,6 @@ ul {
 .btn:hover {
   background-color: rgb(48, 44, 44);
 }
-
 
 /* --------------------------------------------------------------------- */
 
