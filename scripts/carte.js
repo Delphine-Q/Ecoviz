@@ -137,11 +137,11 @@ Promise.all([
         switch (tablink.id) {
           case "co2":
             d3.select("#option-map").dispatch('click');
-            drawGraphic("Évolution des emissions CO2",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions CO2 (en tonnes)")
+            drawGraphic("Évolution des émissions CO2",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions CO2 (en tonnes)")
             break;
           case "temperature":
             d3.select("#option-map").dispatch('click');
-            drawGraphic("Évolution de la contribution au rechauffement climatique",temperatureData,"share_of_temperature_response_ghg_total",tempScale,[0.01,0.1,0.5,1,5,10,20],".1r", "Contribution au rechauffement climatique (en %)"," %")
+            drawGraphic("Évolution de la contribution au réchauffement climatique",temperatureData,"share_of_temperature_response_ghg_total",tempScale,[0.01,0.1,0.5,1,5,10,20],".1r", "Contribution au rechauffement climatique (en %)"," %")
             break;
         }
 
