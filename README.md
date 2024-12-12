@@ -1,7 +1,6 @@
 # Ecoviz
 
-Ecoviz est un projet de visualisation de données sur le réchauffement climatique à travers les émissions de CO2 ainsi que l'augmentation de la température au cours des différentes années dans le monde.
-
+Ecoviz est un projet de visualisation de données sur le réchauffement climatique qui illustre, à travers des graphiques, les émissions de CO2 et l'augmentation des températures au fil des années dans le monde.
 
 
 
