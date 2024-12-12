@@ -137,7 +137,7 @@ Promise.all([
         switch (tablink.id) {
           case "co2":
             d3.select("#option-map").dispatch('click');
-            drawGraphic("Évolution des émissions annuelles de CO2 (en tonnes)",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions annuelles CO2 (en tonnes)")
+            drawGraphic("Évolution des émissions annuelles de CO2 (en tonnes)",emissionData,"emissions_total",co2Scale,[1000,10000,100000,1000000,10000000,100000000,1000000000],".2s","Emissions annuelles CO2 (en tonnes)", " tonnes")
             break;
           case "temperature":
             d3.select("#option-map").dispatch('click');
@@ -264,7 +264,7 @@ Promise.all([
       
           function mousemove(d) {
             tooltip
-              .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + "</p>")
+              .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + unit + "</p>")
               .style("left", (event.pageX - 270) + "px")
               .style("top", (event.pageY - 50) + "px")
           }
