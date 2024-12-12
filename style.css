@@ -242,6 +242,9 @@ th {
 
 }
 
+.carte{
+  margin-bottom: 40px;
+}
 /* __________________________________ */
 
 .slide3 {
@@ -363,7 +366,7 @@ abbr{
   width: 40%;
 }
 
-.droit{
+.droit, .carte{
     font-size: 10pt;
     position: absolute; 
     bottom: 5px; 
