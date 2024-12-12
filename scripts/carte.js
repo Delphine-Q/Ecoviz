@@ -183,26 +183,6 @@ Promise.all([
     .style("position", "absolute")
     .style("z-index", "100")
 
-    function mouseover(d) {
-      tooltip
-        .style("opacity", 1)
-      d3.select(this)
-        .style("stroke-width", 2)
-    }
-
-    function mousemove(d) {
-      tooltip
-        .html("<p style='margin:0'>" + d.explicitOriginalTarget.__data__.properties.name + "<br>" + d3.select(this).attr("value") + "</p>")
-        .style("left", (event.pageX - 300) + "px")
-        .style("top", (event.pageY - 50) + "px")
-    }
-    function mouseleave(d) {
-      tooltip
-        .style("opacity", 0)
-      d3.select(this)
-      .style("stroke-width", "1")
-    }
-
   //Dessiner les graphiques/tableaux
   function drawGraphic(title,dataTable,dataValue,scale,cells,format,dataName,unit = "") {
       sortByYear(dataTable,dataValue)
@@ -279,6 +259,27 @@ Promise.all([
           .on("mouseover", mouseover)
           .on("mousemove", mousemove)
           .on("mouseleave", mouseleave)
+
+          function mouseover(d) {
+            tooltip
+              .style("opacity", 1)
+            d3.select(this)
+              .style("stroke-width", 2)
+          }
+      
+          function mousemove(d) {
+            console.log(d)
+            tooltip
+              .html("<p style='margin:0'>" + d.target.__data__.properties.name + "<br>" + d3.select(this).attr("value") + "</p>")
+              .style("left", (event.clientX - 300) + "px")
+              .style("top", (event.clientY - 50) + "px")
+          }
+          function mouseleave(d) {
+            tooltip
+              .style("opacity", 0)
+            d3.select(this)
+            .style("stroke-width", "1")
+          }
 
         }
 
