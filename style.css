@@ -85,7 +85,7 @@ h4 {
 .slide1 span::before {
   content: ''; 
   position: absolute; 
-  top: -13px; 
+  top: -8px; 
   left: -2px;
   width: 100%;
   height: 100%;
@@ -110,7 +110,7 @@ h4 {
 #graphic {
   margin: 16px;
   width: 1000px;
-  border: solid 1px;
+  border: solid 1px #0B2760;
   position: relative;
   padding: 16px;
   display: flex;
@@ -123,7 +123,7 @@ h4 {
 }
 
 #graph-title {
-  color: black;
+  color: #0B2760;
   text-align: center;
   margin-top: 72px;
   font-family: "Staatliches", sans-serif;
@@ -133,29 +133,29 @@ h4 {
 #tabs {
   width: 100%;
   position: absolute;
-  top: -47px;
+  top: -48px;
   left: -1px;
 }
 
 .tablink {
   width: 120px;
+  height: 48px;
   background-color: white;
   color: black;
-  border: solid 1px black;
+  border: solid 1px #0B2760;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
 
 
 .tablink:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .tablink.active {
-  background-color: black;
+  background-color: #0B2760;
   color: white;
 }
 
@@ -186,7 +186,7 @@ cursor: pointer;
 
 
 #continents button.chosen, #display-options button.chosen {
-  background-color: black;
+  background-color: #0B2760;
   color: white;
 }
 
@@ -275,7 +275,7 @@ th {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: black;
+    background-color: #0B2760;
     outline: none;
     width: 100%;
     height: 1px;
@@ -286,9 +286,23 @@ th {
 .yearSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: white;
+    background: #0B2760;
     cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    border:none;
+}
 
+.yearSlider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #0B2760;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border:none;
 }
 
 /* __________________________________ */

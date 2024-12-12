@@ -304,7 +304,6 @@ Promise.all([
       });
 
       d3.select("#yearSlider").dispatch('input');
-      console.log(dataByYear["CHN"][1])
 
   }
     //initialize avec le graphique CO2
