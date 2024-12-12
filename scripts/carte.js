@@ -266,7 +266,7 @@ Promise.all([
             tooltip
               .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + "</p>")
               .style("left", (event.clientX - 300) + "px")
-              .style("top", (event.clientY - 50) + "px")
+              .style("top", (event.clientY - 100) + "px")
           }
           function mouseleave(d) {
             tooltip

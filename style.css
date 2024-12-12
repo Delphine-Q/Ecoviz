@@ -1,3 +1,4 @@
+/* styles generaux */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -5,6 +6,22 @@ body {
   color: #fff;
   font-size: 1.2rem;
 }
+
+h2 {
+  font-family: "Staatliches", sans-serif;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 10rem;
+  font-family: "Staatliches", sans-serif;
+
+}
+
+h4 {
+  font-size: 4rem;
+}
+
 
 .snap {
   scroll-snap-type: y mandatory;
@@ -47,7 +64,7 @@ body {
   width: 100%; 
   text-align: center; 
   margin: 0; 
-  font-size: 98pt; 
+  font-size: 8rem; 
   color: #125379;
   letter-spacing: 20px;
   text-shadow: 
@@ -68,8 +85,8 @@ body {
 .slide1 span::before {
   content: ''; 
   position: absolute; 
-  top: 0; 
-  left: 0;
+  top: -13px; 
+  left: -2px;
   width: 100%;
   height: 100%;
   background-image: url('image/planete.png');
@@ -91,8 +108,8 @@ body {
 }
 
 #graphic {
+  margin: 16px;
   width: 1000px;
-  height: 690px;
   border: solid 1px;
   position: relative;
   padding: 16px;
@@ -109,7 +126,7 @@ body {
   color: black;
   text-align: center;
   margin-top: 72px;
-
+  font-family: "Staatliches", sans-serif;
 }
 
 /* CO2 ou Temperature boutons */
@@ -286,7 +303,7 @@ th {
 }
 
 .titre h3{
-  font-size: 120pt;
+  font-size: 10rem;
   color: #0B2760;
   text-shadow: 7px 5px 1px #6189A7;
   margin: 0;
@@ -307,13 +324,13 @@ th {
 
 .info h4{
   font-family: "Staatliches", sans-serif;
-  font-size: 60px;
+  font-size: 4rem;
   margin: 0;
 }
 
 .info p{
   color: #00466E;
-  font-size: 32px;
+  font-size: 1.8rem;
   margin-top: 50px;
   margin-bottom: 0;
 }
@@ -350,9 +367,8 @@ abbr{
 }
 
 .titre1 h3{
-  font-size: 120pt;
   color: #0B2760;
-  text-shadow: 7px 5px 1px #172E3F;
+  text-shadow: 7px 5px 1px #4b6984;
   margin: 0;
 }
 
@@ -371,7 +387,7 @@ abbr{
 
 .info1 p{
   color: #0B2760;
-  font-size: 32px;
+  font-size: 1.8rem;
   margin-top: 50px;
   margin-bottom: 0;
 }
@@ -385,7 +401,6 @@ abbr{
 
 .info1 h4{
   font-family: "Staatliches", sans-serif;
-  font-size: 60px;
   margin: 0;
 }
 
@@ -396,7 +411,7 @@ abbr{
 }
 
 .droit{
-    font-size: 10pt;
+    font-size: 0.8rem;
     position: absolute; 
     bottom: 5px; 
     left: 50%; 
@@ -506,8 +521,8 @@ ul {
 .float-btn {
   position: fixed;
   bottom: 0;
-  right: 20px;
-  margin: 20px; /* Adjust margin as needed */
+  right: 12px;
+  margin: 20px 12px;
 }
 
 .float-btn .main-btn {
@@ -552,7 +567,7 @@ ul {
 .float-btn.top ul li a {
   display: flex;
   align-items: center;
-  font-size: 16pt;
+  font-size: 1.2rem;
   width: 100%;
   padding: 10px;
   text-align: center; 
@@ -627,7 +642,7 @@ ul {
 
 
 .modal .content > div p{
-  margin: 5px 0
+  margin: 5px 0;
 }
 
 .modal .content > div h3 {
@@ -647,62 +662,4 @@ ul {
 
 .btn:hover {
   background-color: rgb(48, 44, 44);
-}
-
-/* --------------------------------------------------------------------- */
-
-@media (max-width: 768px) {
-  .slide1 img {
-    width: 80%;
-  }
-
-  .first {
-    font-size: 48pt;
-    letter-spacing: 10px; 
-  }
-
-  .titre h3 {
-    font-size: 60pt;
-  }
-
-  .info h4 {
-    font-size: 40px;
-  }
-
-  .info p {
-    font-size: 24px;
-  }
-
-  .dessin, .dessin1 {
-    width: 100%; 
-    float: none; 
-  }
-
-  .btn {
-    width: 100%; 
-    padding: 15px; 
-  }
-}
-
-
-@media (max-width: 480px) {
-  .first {
-    font-size: 36pt; 
-  }
-
-  .titre h3 {
-    font-size: 40pt; 
-  }
-
-  .info h4 {
-    font-size: 30px;
-  }
-
-  .info p {
-    font-size: 20px; 
-  }
-
-  .slide1 {
-    padding: 30px;
-  }
 }
