@@ -3,6 +3,7 @@
 Ecoviz est un projet de visualisation de données sur le réchauffement climatique à travers les émissions de CO2 ainsi que l'augmentation de la température au cours des différentes années.
 
 Equipe du projet:
+
 -Delphine QUACH: Développeuse et Designeuse 
 -Thuy-Hang NGUYEN: Développeuse
 -Mathilde LAFOSSE: Développeuse et Designeuse
