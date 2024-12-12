@@ -106,14 +106,45 @@ body {
 #graph-title {
   color: black;
   text-align: center;
+  margin-top: 72px;
 
 }
+
 #tabs {
   width: 100%;
   position: absolute;
   top: -43px;
   left: -1px;
 }
+
+.tablink {
+  width: 120px;
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+
+.tablink:hover {
+cursor: pointer;
+}
+
+.tablink.active {
+  background-color: #D5E9ED;
+  color: black;
+  border: solid 1px;
+  border-bottom: none;
+}
+
+.tablink.active:hover {
+  cursor: default;
+}
+
 
 .flex {
   display: flex;
@@ -137,7 +168,7 @@ body {
   padding: 12px 16px;
   border: solid 1px;
   border-radius: 21px;
-  margin: 4px;
+  margin: 4px 0;
 }
 
 
@@ -157,11 +188,28 @@ body {
 
 #display-options {
   text-align: right;
+  position: absolute;
+  right: 0;
+  margin-right: 16px;
 }
 
 
 #display-options svg {
   margin-right: 8px;
+}
+
+#sources-graphic {
+  color: black;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 16px;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+#sources-graphic * {
+  color: black;
+  margin: 4px 0;
 }
 
 #display-table {
@@ -185,35 +233,6 @@ th {
 }
 
 
-.tablink {
-    width: 120px;
-    background-color: black;
-    color: white;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-  }
-
-
-.tablink:hover {
-  cursor: pointer;
-}
-  
-  .tablink.active {
-    background-color: #D5E9ED;
-    color: black;
-    border: solid 1px;
-    border-bottom: none;
-  }
-
-  .tablink.active:hover {
-    cursor: default;
-  }
-
-
 /* SLIDER */
 .slider {
     margin: auto;
@@ -234,7 +253,7 @@ th {
 
 }
 
-.yearSlider::-webkit-slider-thumb,.yearSlider::-moz-range-thumb {
+.yearSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     background: white;

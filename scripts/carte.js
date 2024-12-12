@@ -173,7 +173,7 @@ Promise.all([
   //infobulle qui s'affiche en hover
   let tooltip = d3.select("#map")
     .append("div")
-    .style("opacity", 0)
+    .style("display", "none")
     .attr("class", "tooltip")
     .style("background-color", "white")
     .style("border", "solid")
@@ -246,7 +246,7 @@ Promise.all([
           .attr("fill", d => {
               const iso = d.id;
               if (data && data[iso]) {
-                if (data[iso][1]>0) {
+                if (data[iso][1]>cells[0]) {
                   return colorScale(data[iso][1]);
                 } else return "#7BC13D";
               } else return "#ccc";
@@ -255,14 +255,16 @@ Promise.all([
             const iso = d.id;
             return data && data[iso] ? data[iso][1] : "Inconnu";
         })
-        //afficher infobulle on hover
+        //afficher infobulle en survol des pays
           .on("mouseover", mouseover)
           .on("mousemove", mousemove)
           .on("mouseleave", mouseleave)
 
+
+        //afficher/cacher infobulle
           function mouseover(d) {
             tooltip
-              .style("opacity", 1)
+              .style("display", "block")
             d3.select(this)
               .style("stroke-width", 2)
           }
@@ -270,13 +272,13 @@ Promise.all([
           function mousemove(d) {
             console.log(d)
             tooltip
-              .html("<p style='margin:0'>" + d.target.__data__.properties.name + "<br>" + d3.select(this).attr("value") + "</p>")
+              .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + "</p>")
               .style("left", (event.clientX - 300) + "px")
               .style("top", (event.clientY - 50) + "px")
           }
           function mouseleave(d) {
             tooltip
-              .style("opacity", 0)
+              .style("display", "none")
             d3.select(this)
             .style("stroke-width", "1")
           }
