@@ -151,11 +151,11 @@ Promise.all([
 
     //differences dans les parametres des 2 graphiques
     const co2Scale = d3.scaleLog()
-    .domain([1000,100000,100000000,1000000000])
+    .domain([1000,1000000,100000000,1000000000])
     .range(["#7BC13D","#DBDCA0","#EFAE3A","#C53026"]);
   
     const tempScale = d3.scaleLog()
-    .domain([0.01,0.1,1,20])
+    .domain([0.01,1,5,20])
     .range(["#7BC13D","#DBDCA0","#EFAE3A","#C53026"]);
 
 
@@ -265,8 +265,8 @@ Promise.all([
           function mousemove(d) {
             tooltip
               .html("<p style='margin:0'><strong style='margin:0 12px 0 0'>" + d.target.__data__.properties.name + "</strong><br>" + d3.select(this).attr("value") + "</p>")
-              .style("left", (event.clientX - 300) + "px")
-              .style("top", (event.clientY - 100) + "px")
+              .style("left", (event.pageX - 270) + "px")
+              .style("top", (event.pageY - 50) + "px")
           }
           function mouseleave(d) {
             tooltip
